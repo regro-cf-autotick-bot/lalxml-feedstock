@@ -10,8 +10,8 @@ Feedstock license: BSD 3-Clause
 Summary: LSC Algorithm XML Library
 
 The LSC Algorithm XML Library for gravitational wave data analysis.
-This package contains the shared-object libraries and python bindings
-needed to run applications that use the LAL XML library.
+This package contains the shared-object libraries needed to run
+applications that use the LAL XML library.
 
 
 Current build status
@@ -27,6 +27,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-lalxml-green.svg)](https://anaconda.org/conda-forge/lalxml) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lalxml.svg)](https://anaconda.org/conda-forge/lalxml) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lalxml.svg)](https://anaconda.org/conda-forge/lalxml) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lalxml.svg)](https://anaconda.org/conda-forge/lalxml) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-python--lalxml-green.svg)](https://anaconda.org/conda-forge/python-lalxml) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/python-lalxml.svg)](https://anaconda.org/conda-forge/python-lalxml) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/python-lalxml.svg)](https://anaconda.org/conda-forge/python-lalxml) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/python-lalxml.svg)](https://anaconda.org/conda-forge/python-lalxml) |
 
 Installing lalxml
 =================
@@ -37,10 +38,10 @@ Installing `lalxml` from the `conda-forge` channel can be achieved by adding `co
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `lalxml` can be installed with:
+Once the `conda-forge` channel has been enabled, `lalxml, python-lalxml` can be installed with:
 
 ```
-conda install lalxml
+conda install lalxml python-lalxml
 ```
 
 It is possible to list all of the versions of `lalxml` available on your platform with:
