@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -26,11 +26,7 @@ requirements:
     - lal
     - python
     - numpy
-  run:
-    - libxml2
-    - lal
-    - python
-    - numpy
+    - python-lal
 
 test:
   imports:
@@ -38,16 +34,72 @@ test:
   commands:
     - lalxml_version --verbose
 
+outputs:
+  - name: lalxml
+    requirements:
+      build:
+        - {{ compiler('c') }}
+      host:
+        - gsl
+        - libxml2
+        - lal
+      run:
+        - gsl
+        - libxml2
+        - lal
+    files:
+      - bin/lalxml_version
+      - etc/lalxml-user-env.*
+      - include/lal/LALXML*.h
+      - lib/liblalxml*
+      - lib/pkgconfig/lalxml*.pc
+    test:
+      commands:
+        - lalxml_version --verbose
+    about:
+      home: https://wiki.ligo.org/DASWG/LALSuite
+      license: GPLv3
+      license_family: GPL
+      license_file: COPYING
+      summary: LSC Algorithm XML Library
+      description: |
+        The LSC Algorithm XML Library for gravitational wave data analysis.
+        This package contains the shared-object libraries needed to run
+        applications that use the LAL XML library.
+  - name: python-lalxml
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - swig>=3.0.7
+      host:
+        - {{ pin_subpackage('lalxml', exact=True) }}
+        - python
+        - numpy
+      run:
+        - {{ pin_subpackage('lalxml', exact=True) }}
+        - python
+        - numpy
+        - python-lal
+    files:
+      - lib/python*/site-packages/lalxml/**
+    test:
+      imports:
+        - lalxml
+    about:
+      home: https://wiki.ligo.org/DASWG/LALSuite
+      license: GPLv3
+      license_family: GPL
+      license_file: COPYING
+      summary: LSC Algorithm XML Library
+      description: |
+        The LSC Algorithm XML Library for gravitational wave data analysis.
+        This package contains the python bindings.
+
 about:
   home: https://wiki.ligo.org/DASWG/LALSuite
   license: GPLv3
   license_family: GPL
-  license_file: COPYING
   summary: LSC Algorithm XML Library
-  description: |
-    The LSC Algorithm XML Library for gravitational wave data analysis.
-    This package contains the shared-object libraries and python bindings
-    needed to run applications that use the LAL XML library.
 
 extra:
   recipe-maintainers:
