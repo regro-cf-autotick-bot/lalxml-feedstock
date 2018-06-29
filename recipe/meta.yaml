@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
 
 requirements:
@@ -50,7 +50,9 @@ outputs:
     files:
       - bin/lalxml_version
       - etc/lalxml-user-env.*
-      - include/lal/LALXML*.h
+      - include/lal/LALXML*
+      - include/lal/SWIGLALXML*
+      - include/lal/swiglalxml*
       - lib/liblalxml*
       - lib/pkgconfig/lalxml*.pc
     test:
