@@ -14,7 +14,7 @@ docker_image:
 - condaforge/linux-anvil-comp7
 - condaforge/linux-anvil
 gsl:
-- '2.2'
+- '2.4'
 libxml2:
 - '2.9'
 numpy:
