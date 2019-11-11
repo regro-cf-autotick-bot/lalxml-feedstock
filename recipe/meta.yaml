@@ -61,6 +61,7 @@ outputs:
     about:
       home: https://wiki.ligo.org/DASWG/LALSuite
       license: GPLv3
+      license_file: COPYING
       license_family: GPL
       license_file: COPYING
       summary: LSC Algorithm XML Library
@@ -90,6 +91,7 @@ outputs:
     about:
       home: https://wiki.ligo.org/DASWG/LALSuite
       license: GPLv3
+      license_file: COPYING
       license_family: GPL
       license_file: COPYING
       summary: LSC Algorithm XML Library
